@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hey My Love</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,500&family=Cormorant+Garamond:wght@400;500;600&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- floating hearts + sparkle canvas layer, lives behind everything -->
+<div class="ambient-layer" id="ambientLayer" aria-hidden="true"></div>
+
+<!-- music control -->
+<button class="music-toggle" id="musicToggle" aria-label="Toggle music">
+  <span class="music-icon">&#9835;</span>
+</button>
+<audio id="bgMusic" loop preload="none">
+  <source src="music/song.mp3" type="audio/mpeg">
+</audio>
+
+<!-- progress dot rail -->
+<nav class="rail" aria-hidden="true">
+  <span class="rail-dot" data-target="hero"></span>
+  <span class="rail-dot" data-target="sorry"></span>
+  <span class="rail-dot" data-target="wrong"></span>
+  <span class="rail-dot" data-target="letter"></span>
+  <span class="rail-dot" data-target="memories"></span>
+  <span class="rail-dot" data-target="reasons"></span>
+  <span class="rail-dot" data-target="promises"></span>
+  <span class="rail-dot" data-target="lastthing"></span>
+  <span class="rail-dot" data-target="forgive"></span>
+</nav>
+
+<!-- 1. HERO -->
+<section class="section hero" id="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <p class="hero-line" data-line="0">Hey My Love&hellip;</p>
+    <p class="hero-line" data-line="1">I know I messed up.</p>
+    <p class="hero-line" data-line="2">And I&rsquo;m genuinely sorry.</p>
+    <button class="glow-btn hero-btn" id="openHeartBtn">
+      <span>Open My Heart</span>
+      <svg class="btn-heart" viewBox="0 0 24 24" width="18" height="18"><path d="M12 21s-6.7-4.3-9.3-8.2C.6 9.6 1.6 5.8 5 4.6c2.1-.7 4.1.2 5.3 2 .3.4.9.4 1.2 0 1.2-1.8 3.2-2.7 5.3-2 3.4 1.2 4.4 5 2.3 8.2C18.7 16.7 12 21 12 21z"/></svg>
+    </button>
+  </div>
+  <div class="scroll-hint" aria-hidden="true"><span></span></div>
+</section>
+
+<!-- 2. I'M SORRY -->
+<section class="section sorry" id="sorry">
+  <div class="section-inner">
+    <h2 class="heading">I&rsquo;m Sorry, My Love.</h2>
+    <p class="typewriter-para" id="sorryPara" data-full="I hurt you, and made you angry you r the most important person in my life and i will take care in future that i won't repeat ir baby."></p>
+    <p class="emphasis-line reveal-on-scroll">I know saying sorry doesn&rsquo;t magically fix everything, but I want you to know that I truly regret hurting you.</p>
+    <p class="closing-line reveal-on-scroll">I&rsquo;m sorry.</p>
+  </div>
+</section>
+
+
+<!-- 4. LOVE LETTER -->
+<section class="section letter" id="letter">
+  <div class="section-inner">
+    <div class="paper" id="paper">
+      <p class="letter-line" data-speed="normal">My Dearest Love,</p>
+      <p class="letter-line">I know I made a mistake, and I know that sometimes even a small mistake can hurt a lot when it comes from the person you expect the most from.</p>
+      <p class="letter-line">I never intended to hurt you. But I understand that intentions don&rsquo;t erase feelings, and I understand that you had every right to feel the way you did. I am genuinely sorry &mdash;and for making you feel hurt.</p>
+      <p class="letter-line">You mean far too much to me for me to let a careless moment make you question how much I love you.</p>
+      <p class="letter-line">I&rsquo;m not asking you to instantly forget what happened. I&rsquo;m only asking you to look at my heart and know that I&rsquo;m truly sorry.</p>
+      <p class="letter-signoff">Forever yours,<br>Your idiot who loves you endlessly, Lucky.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- lightbox -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" id="lightboxClose" aria-label="Close">&times;</button>
+  <img src="" alt="" id="lightboxImg">
+  <p class="lightbox-caption" id="lightboxCaption"></p>
+</div>
+
+<!-- 6. WHY I LOVE YOU -->
+<section class="section reasons" id="reasons">
+  <div class="ambient-hearts" aria-hidden="true"></div>
+  <div class="section-inner">
+    <h2 class="heading">Do You Know Why I Love You?</h2>
+    <div class="reasons-list">
+      <p class="reason reveal-up">Because your smile makes my worst days better.</p>
+      <p class="reason reveal-up">Because you make ordinary moments feel special.</p>
+      <p class="reason reveal-up">Because you understand the parts of me nobody else does.</p>
+      <p class="reason reveal-up">Because you make me want to become better.</p>
+      <p class="reason reveal-up">Because you&rsquo;re my safe place.</p>
+      <p class="reason reveal-up">Because you&rsquo;re simply you.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 7. PROMISES -->
+<section class="section promises" id="promises">
+  <div class="section-inner">
+    <div class="glow-heart" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="90" height="90"><path d="M12 21s-6.7-4.3-9.3-8.2C.6 9.6 1.6 5.8 5 4.6c2.1-.7 4.1.2 5.3 2 .3.4.9.4 1.2 0 1.2-1.8 3.2-2.7 5.3-2 3.4 1.2 4.4 5 2.3 8.2C18.7 16.7 12 21 12 21z"/></svg>
+    </div>
+    <h2 class="heading">I Want To Do Better.</h2>
+    <div class="promise-list">
+      <p class="promise reveal-up">I promise to be more thoughtful.</p>
+      <p class="promise reveal-up">I promise to listen better.</p>
+      <p class="promise reveal-up">I promise to remember the little things.</p>
+      <p class="promise reveal-up">I promise to appreciate you more.</p>
+      <p class="promise reveal-up">And I promise to never take your love for granted.</p>
+    </div>
+    <p class="promise-closing reveal-on-scroll">I can&rsquo;t change the moment that hurt you, but I can change what I do after it.</p>
+  </div>
+</section>
+
+<!-- 8. ONE LAST THING -->
+<section class="section lastthing" id="lastthing">
+  <div class="section-inner center">
+    <div class="beating-heart" id="beatingHeart" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="140" height="140"><path d="M12 21s-6.7-4.3-9.3-8.2C.6 9.6 1.6 5.8 5 4.6c2.1-.7 4.1.2 5.3 2 .3.4.9.4 1.2 0 1.2-1.8 3.2-2.7 5.3-2 3.4 1.2 4.4 5 2.3 8.2C18.7 16.7 12 21 12 21z"/></svg>
+    </div>
+    <button class="glow-btn" id="lastThingBtn"><span>One Last Thing&hellip;</span></button>
+    <div class="last-message" id="lastMessage">
+      <p class="last-line big">I LOVE YOU.</p>
+      <p class="last-line">More than this website could ever explain.</p>
+      <p class="last-line">And I&rsquo;m really, really sorry.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 9. FORGIVE ME -->
+<section class="section forgive" id="forgive">
+  <div class="forgive-glow"></div>
+  <div class="section-inner center" id="forgiveContent">
+    <h2 class="heading">Can You Forgive Me?</h2>
+    <p class="forgive-sub">I know I messed up, but I really, really am sorry.</p>
+    <div class="button-row" id="buttonRow">
+      <button class="yes-btn" id="yesBtn">YES</button>
+      <button class="no-btn" id="noBtn">NO</button>
+    </div>
+  </div>
+
+  <div class="celebration" id="celebration" aria-hidden="true"></div>
+
+  <div class="final-message" id="finalMessage">
+    <div class="big-heart-bg" aria-hidden="true"></div>
+    <p class="final-line huge">I KNEW YOU COULDN&rsquo;T RESIST ME.</p>
+    <p class="final-line">Thank you for forgiving your stupid idiot.</p>
+    <p class="final-line">I love you more than words can explain.</p>
+    <p class="final-line emphasis">Now come here and let me make it up to you.</p>
+  </div>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
